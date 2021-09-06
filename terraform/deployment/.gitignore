@@ -1,0 +1,2 @@
+#Ignore .terraformfiles such as state files
+.terraform
