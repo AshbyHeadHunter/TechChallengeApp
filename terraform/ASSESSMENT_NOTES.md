@@ -25,7 +25,9 @@ Candidates will be assessed across the following categories:
 
 - Network segmentation (if applicable to the implementation)
   - Public subnets and private subnets used. ECS and RDS sits in private subnet while the application load balancer sits in the public. 
-- Secret storage
+- Secret storage 
+  - If i get this into a github action then Id store secrets in GITHUB to start with
+  - Ideally use something like Vault from Hashicorp or AWS Secrets manager
 - Platform security features
 
 #### Simplicity
@@ -45,3 +47,4 @@ Candidates will be assessed across the following categories:
 - [ ] Create Github actions 
 - [ ] make rds instance_class a variable in the deployment varaibles to easily change it 
 - [ ] in the ECS module look at secruity group for the ALB and get the ingress to use whitelist variable
+- [ ] Secret store - This can be managed by GIT secrets when the Github action is setup
