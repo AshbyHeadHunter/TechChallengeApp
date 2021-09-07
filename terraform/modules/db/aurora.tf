@@ -9,7 +9,7 @@ resource "aws_rds_cluster" "postgresql" {
   preferred_backup_window   = "07:00-09:00"
   vpc_security_group_ids    = [aws_security_group.aurora.id]
   db_subnet_group_name      = aws_db_subnet_group.default.name
-  final_snapshot_identifier = "${var.app_name}-final-snapshot"
+  final_snapshot_identifier = "${var.app_name}-final-snapshot-${formatdate("YYYYMMDDhhmm", timestamp())}"
 }
 
 resource "aws_rds_cluster_instance" "cluster_instances" {
@@ -32,7 +32,6 @@ resource "aws_security_group" "aurora" {
   name        = "${var.app_name}-db"
   description = "Access to prostgres"
   vpc_id      = var.vpc.id
-
   # Postgresql access from anywhere in the VPC. Required as the DB sites in private network and is not accessable outside of the VPC
   ingress {
     from_port   = 5432
