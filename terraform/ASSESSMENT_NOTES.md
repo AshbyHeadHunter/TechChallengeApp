@@ -38,3 +38,10 @@ Candidates will be assessed across the following categories:
 - Auto scaling and highly available frontend
 - Highly available Database
   - Built in aurora, even though by default this will deploy 1 in the cluster easily change to deploy multiple.
+
+
+
+# TODO:
+- [ ] Create Github actions 
+- [ ] make rds instance_class a variable in the deployment varaibles to easily change it 
+- [ ] in the ECS module look at secruity group for the ALB and get the ingress to use whitelist variable
