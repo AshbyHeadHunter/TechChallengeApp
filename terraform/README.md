@@ -52,3 +52,20 @@ You will need to follow the below to be able to deploy this application
 - Initialise state file: `terraform init`
 - Apply `terraform apply`
 
+
+# Running task to seed database with test data
+1. Go to AWS ECS
+2. Go into your newly created cluster
+3. Click on the Tasks Tab
+4. Press the Run new Task button
+   1. Launch type = Fargate
+   2. Cluster VPC = The VPC created by terraform should have a 10.x.x.x IP address in the drop down
+   3. Subnet = choose private-a subnet
+   4. Security group = Select the same security group as other tasks ie app_name-ecs-tasks-security-group
+   5. Expand the Advanced options
+      1. under Container Overrides change command override to updatedb (from serve)
+   6. Thats it press Run Task
+5. Once you run the task go into the task and watch the logs you will see eventually that it will be running the database commands and seeding database
+
+
+
