@@ -21,7 +21,7 @@ variable "whitelisted_cidr" {
 }
 variable "image_repository" {
   description = "Docker Image repository to use for the Containers"
-  default = "codingric/servian"
+  default = "ashbyheadhunter/techchallengeapp"
 }
 variable "db_user" {
   description = "Set the Database Username, used when creating the Aurora Cluster but also used to configure the application"
